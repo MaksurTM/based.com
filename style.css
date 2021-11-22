@@ -107,7 +107,7 @@ footer {
 div.footer img {height:1.2rem;}
 
 /* Headers */
-h1,h2,h3 {text-shadow: 2px 2px rgb(0,0,0,1);}
+h1,h2,h3 {text-shadow: 2px 2px rgb(0,0,0,1);margin-top:1.5em}
 h1 {color:var(--red);text-align:center}
 h2 {color:var(--orange)}
 h3 {color:var(--yellow)}
