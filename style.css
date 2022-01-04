@@ -35,14 +35,14 @@
 /* == Iwona Font == */
 @font-face {
 	font-family: iwona-mn;
-	font-style: italic;
+	font-style: normal;
 	src: url(data/iwona-mn.ttf);
 }
 
 /* == Lettrine Font == */
 @font-face {
 	font-family: lettrine;
-	font-style: italic;
+	font-style: normal;
 	src: url(data/heavyrain.ttf);
 }
 
@@ -129,7 +129,7 @@ h2 {text-transform: uppercase;font-size:1.2em}
 h3 {font-size:1.1em}
 h4 {color:var(--blue)}
 
-@media (min-width: 55em) {
+@media (min-width: 55rem) {
 	.resright {
 		display: block ;
 		float: right;
@@ -137,6 +137,8 @@ h4 {color:var(--blue)}
 		clear: both ;
 		max-height: 300px ;
 		max-width: 300px ;
+		margin-top:0;
+		margin-right:0;padding-right:0;
 	}
 }
 /* Navigation bar */
@@ -170,10 +172,10 @@ h4 {color:var(--blue)}
 a, button {
 	color: var(--fg);
   	text-decoration: none;
-	font-family: 'iwona-mn'}
+	font-family: 'iwona-mn';
+}
 button:hover, a:hover {
-	color: var(--bg);
-	background: var(--fg);
+	color: var(--laqua);
 	transition: all 0.5s ease 0s;
 	cursor: pointer;
 }
@@ -181,8 +183,6 @@ button {
 	font-size:1.1rem;
 	background: var(--lblue);
 	border: none;
-	padding: 0 10px 0 10px;
-	border-radius: 50px;
 }
 
 /* Flexbox with blocks */
