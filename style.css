@@ -32,16 +32,22 @@
 	src: url(data/ebg-i.ttf);
 }
 
-/* == Iwona == */
+/* == Iwona Font == */
 @font-face {
 	font-family: iwona-mn;
 	font-style: italic;
 	src: url(data/iwona-mn.ttf);
 }
 
+/* == Lettrine Font == */
+@font-face {
+	font-family: lettrine;
+	font-style: italic;
+	src: url(data/heavyrain.ttf);
+}
 
 :root {
-	--bg0_h:  #000000;
+	--bg_h:     #eee;
 
 	--fg:     #282828;
 	--bg:     #f6f6f6;
@@ -88,7 +94,7 @@ body {
 	text-align: justify;
   	text-justify: inter-word;
 	margin: auto;
-	min-width: 50em;
+	min-width: 50rem;
 	max-width: 800px;
 	min-height:100%;
 	padding: 1em;
@@ -102,7 +108,6 @@ footer {
 	display: flex;
 	width:100%;
 	bottom: 0;
-	background:var(--bg0_h);
 	margin-top: 1em
 }
 .footer:first-child,.footer:last-child {margin: 0 1em 0 1em}
@@ -119,7 +124,7 @@ h1,h2,h3,h4 {
 	font-family:iwona-mn;
 	font-weight:normal;
 }
-h1 {text-align: center;color:var(--red);text-transform: uppercase;font-size:1.6em}
+h1 {text-align: center;text-transform: uppercase;font-size:1.6em;font-family:ebg-n;padding-bottom:0.7em}
 h2 {text-transform: uppercase;font-size:1.2em}
 h3 {font-size:1.1em}
 h4 {color:var(--blue)}
@@ -163,13 +168,12 @@ h4 {color:var(--blue)}
 
 /* buttons */
 a, button {
-	color: var(--bg);
-  	text-decoration: none;
-	font-family: 'nsans','nsans-b','nsans-o','nsans-bo'
-}
-button:hover, a:hover {
 	color: var(--fg);
-	background: var(--bg);
+  	text-decoration: none;
+	font-family: 'iwona-mn'}
+button:hover, a:hover {
+	color: var(--bg);
+	background: var(--fg);
 	transition: all 0.5s ease 0s;
 	cursor: pointer;
 }
@@ -260,30 +264,6 @@ ol.toc li a:hover {
 	color:var(--aqua);
 }
 
-.parallax{
-	margin: auto;
-	margin-top:4em;
-	min-width: 50em;
-	max-width: 800px;
-	min-height:100%;
-	padding: 1em;
-
-	/* Center Vertically */
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-
-	/* Set a specific height */
-	min-height: 500px;
-
-	/* Create the parallax scrolling effect */
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
 code {
 	font-family:iwona-mn;
 	font-size: 0.9em;
@@ -309,6 +289,37 @@ div.center {
 	justify-content: center ;
 	overflow-wrap: break-word ;
 }
+
+div p:first-of-type:first-letter {
+	float: left; font-size:25pt;
+	font-family:lettrine;
+	text-indent:0;
+	margin-right:0.1em;
+}
 p {
 	margin: 0.5em 0;
+	font-size:13pt;
  }
+
+ h1::after {
+    	display: block;
+	min-width: 50rem;
+	max-width: 800px;
+	content: '';
+	margin:auto;
+	position: absolute;
+	height: 1px;
+	background: black;
+	transform: translateY(10px);
+}
+ h1::before{
+	 margin:auto;
+	min-width: 50rem;
+	max-width: 800px;
+	content: '';
+	position: absolute;
+	height: 1px;
+	background: black;
+    	display: block;
+	transform: translateY(-10px);
+}
